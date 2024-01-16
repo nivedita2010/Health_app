@@ -1,9 +1,11 @@
 
+import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:health_app/login.dart';
+import 'package:health_app/login_emai.dart';
 
 import 'button_widget.dart';
 
@@ -27,7 +29,7 @@ class onboarding extends StatefulWidget {
 
 class _onboardingState extends State<onboarding> {
   int currentPage = 0;
-  PageController _pageController = PageController(
+  final PageController _pageController = PageController(
     initialPage: 0,
     keepPage: true,
   );
@@ -36,6 +38,7 @@ class _onboardingState extends State<onboarding> {
     return Scaffold(
       body: Stack(
         children: [
+
           PageView(
             controller: _pageController,
             children: [
@@ -50,7 +53,7 @@ class _onboardingState extends State<onboarding> {
             ),
 
           Container(
-           margin: EdgeInsets.only(bottom: 70),
+           margin: EdgeInsets.only(bottom: 80),
             child: Align(
              alignment: Alignment.bottomCenter,
               child: Row(
@@ -61,14 +64,14 @@ class _onboardingState extends State<onboarding> {
           ),
 
       Positioned(
-        bottom: 20.0,
+        bottom: 17.0,
         left: 100,
 
         child: Align(
           alignment:Alignment.bottomCenter ,
           child: ButtonWidget(
               onTap: openLoginPage,
-          buttonText: 'Skip',
+          buttonText: (currentPage==3)?'Skip':'get started',
             buttonColor: Color(0xff1470FB),
             borderRadius: 100,
             textColor: Colors.white,
@@ -135,7 +138,7 @@ class _onboardingState extends State<onboarding> {
     });
   }
   openLoginPage(){
-    Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage(),));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => LoginEmail(),));
   }
 }
 

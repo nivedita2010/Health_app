@@ -20,8 +20,9 @@ class ButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Container(
-      margin:EdgeInsets.symmetric(horizontal: 20),
-      width: 180,
+      //margin:EdgeInsets.symmetric(horizontal: 20),
+      margin: EdgeInsets.fromLTRB(16, 10, 16, 10),
+      //width: ,
       decoration: BoxDecoration(
         color: buttonColor??Colors.white,
         borderRadius: BorderRadius.circular(borderRadius??0),),
