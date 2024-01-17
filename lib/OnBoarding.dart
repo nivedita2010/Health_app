@@ -138,7 +138,7 @@ class _onboardingState extends State<onboarding> {
     });
   }
   openLoginPage(){
-    Navigator.push(context, MaterialPageRoute(builder: (context) => LoginEmail(),));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage(),));
   }
 }
 

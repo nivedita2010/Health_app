@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
+
 class PinInput extends StatefulWidget {
   const PinInput({super.key});
 
@@ -15,18 +15,17 @@ class _PinInputState extends State<PinInput> {
     height: 56,
     textStyle: TextStyle(
         fontSize: 20,
-        color: Color.fromRGBO(30, 60, 87, 1),
+        //color: Color(0xff323232),
         fontWeight: FontWeight.w600),
     decoration: BoxDecoration(
-      border: Border.all(color: Color.fromRGBO(234, 239, 243, 1)),
+      border: Border.all(color: Color(0xffD2D5DB)),
       borderRadius: BorderRadius.circular(20),
     ),
   );
 
-
   Widget build(BuildContext context) {
-    return  Scaffold(
-      extendBodyBehindAppBar: true,
+    return Scaffold(
+      // extendBodyBehindAppBar: true,
       body: Container(
         margin: EdgeInsets.only(left: 25, right: 25),
         alignment: Alignment.center,
@@ -36,7 +35,7 @@ class _PinInputState extends State<PinInput> {
               Pinput(
                 length: 4,
                 showCursor: true,
-                onCompleted: (pin)=>print(pin),
+                onCompleted: (pin) => print(pin),
               )
             ],
           ),
@@ -45,4 +44,3 @@ class _PinInputState extends State<PinInput> {
     );
   }
 }
-
